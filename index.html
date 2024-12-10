@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD</title>
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/livro.ico.png">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <span>Cadastro de Livros e Autores</span>
+      <h1 id="headerTitle">Livros</h1>
+      <input type="text" id="searchBook" placeholder="Pesquisar por nome do livro ou autor" />
+      <button onclick="openModal()" id="addL">Adicionar Livro</button>
+      <div class="nav-buttons">
+        <button id="btnLivros" onclick="showLivros()">Livros</button>
+        <button id="btnAutores" onclick="showAutores()">Autores</button>
+      </div>
+    </div>
+
+    <!-- Seção de Livros -->
+    <div id="livrosSection">
+      <div class="divTable">
+        <table id="livroTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Autor</th>
+              <th>Páginas</th>
+              <th class="acao">Editar</th>
+              <th class="acao">Excluir</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Seção de Autores -->
+    <div id="autoresSection" style="display: none;">
+      <div class="divTable">
+        <table id="autorTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nome</th>
+              <th>Email</th>
+              <th class="acao">Editar</th>
+              <th class="acao">Excluir</th>
+            </tr>
+          </thead>
+          <tbody><!-- Exemplo de linha de autor -->
+            <tr>
+              <td>ID</td>
+              <td>Nome</td>
+              <td>Email</td>
+              <td class="acao">
+                <button onclick="editItem()"><i class='bx bx-edit'></i></button>
+              </td>
+              <td class="acao">
+                <button onclick="deleteItem()"><i class='bx bx-trash'></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+
+    <!-- Modal de Livro -->
+    <div class="modal-container" id="modalLivro">
+      <div class="modal">
+        <form id="formLivro">
+          <label for="m-nome">Nome do livro</label>
+          <input id="m-nome" type="text" required />
+
+          <label for="m-autor">Autor</label>
+          <input id="m-autor" type="text" required />
+
+          <label for="m-paginas">Número de páginas</label>
+          <input id="m-paginas" type="number" required />
+          <button id="btnSalvarLivro">Salvar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal de Autor -->
+    <div class="modal-container" id="modalAutor">
+      <div class="modal">
+        <form id="formAutor">
+          <label for="m-nome-autor">Nome do autor</label>
+          <input id="m-nome-autor" type="text" required />
+
+          <label for="m-email">Email</label>
+          <input id="m-email" type="email" required />
+          <button id="btnSalvarAutor">Salvar</button>
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

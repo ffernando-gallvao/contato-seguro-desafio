@@ -1,0 +1,38 @@
+.header {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto 12px;
+}
+
+.header span {
+    font-weight: 900;
+    font-size: 20px;
+    word-break: break-all;
+}
+.container .header h1{
+    position: relative;
+    right: 32rem;
+    bottom: 5rem;
+}
+@media (max-width: 920px){
+    .header {
+        min-height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto 12px;
+    }
+    
+    .header span {
+        font-weight: 1200;
+        font-size: 11px;
+        word-break: break-all;
+    }
+    .container .header h1{
+        position: relative;
+        right: 170px;
+        bottom: 5rem;
+    }
+}
